@@ -111,8 +111,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </nav>   
          <div class="buttonspanel">
-          <a href="<?php echo base_url("index.php/signup");?>"> <img src="<?php echo base_url("assets/images/Log Register.png");?>" class="loginimage" alt=""></a>
-          <a href="<?php echo base_url("index.php/signin");?>"><img src="<?php echo base_url("assets/images/Log In Iportal.png");?>" class="loginimage" alt=""></a>     
+          <a href="<?php echo base_url("index.php/signup");?>"> <img style="height:30px;margin-top:0.2%;" src="<?php echo base_url("assets/images/frontend/sign-up.png");?>" class="loginimage" alt=""></a>
+          <a href="<?php echo base_url("index.php/signin");?>"><img style="height:30px;margin-top:0.2%;"  src="<?php echo base_url("assets/images/frontend/sign-in.png");?>" class="loginimage" alt=""></a>     
          </div>
              
         </div>

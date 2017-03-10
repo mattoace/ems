@@ -738,7 +738,7 @@ ul.dropdown-menu.drp-mnu li {
     display: none;
     margin: 0;
     padding: 0;
-    background: #353f4f;
+    background: #8BC34A;
 }
 
 .custom-nav .sub-menu-list > li > a {
@@ -2960,7 +2960,7 @@ span.badge1 {
   font-size: 0.85em;
   color: #555;
   /*line-height: 1.8em;*/
-  line-height: 0.9em;
+  line-height: 0.35em;
 }
 .bs-example-modal {
   background-color: #fff !important;
@@ -7586,11 +7586,11 @@ textarea.form-control1.control2 {
 }
 
 .left-side.sticky-left-side {
-    background-color: #490339;
+    background-color: #3C7641;
 }
 
 .nav.nav-pills.nav-stacked.custom-nav {
-    background-color: #490339;
+    background-color: #3C7641;
 }
 .menu-right {
     background-color: #EAE5E5;

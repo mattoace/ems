@@ -42,7 +42,7 @@ function loadInstitutions(institutionType,myTable1,myEditor1,inst_name){
               institutionDropdown.append(o);
          }         
        selectChanged(institutionType,myTable1,myEditor1,null,null);
-       setCookie('institution_type',institutionType, 1); //alert(institutionType); 
+       setCookie('institution_type',institutionType, 1); 
        chooseSubjects(institutionType);       
      },"json");
 
@@ -121,7 +121,7 @@ function chooseClasses(selVal){
       },"json");
     
     }
-    chooseSubjects(1); 
+    chooseSubjects(2); 
     
   function chooseTerm(){
     var termDropdown = $('#selector6');
