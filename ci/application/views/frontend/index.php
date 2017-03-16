@@ -36,6 +36,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <link rel="stylesheet" href="<?php echo base_url("assets/jssor/dc_parallax.css");?>">
 
 
+
+
     <style>
   .iossliderContainer {
     background-image: url("../../../bg_images/color/c21.jpg");

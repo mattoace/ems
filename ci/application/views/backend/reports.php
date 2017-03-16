@@ -128,11 +128,11 @@
                          </div>
 
                          <div class="form-group">                     
-                             <label for="selector6" class="col-sm-2 control-label" style="width:18.4%; padding-left: 2.4%; margin-top: 0.9%;">Exam Year</label> 
+                             <label for="selector7" class="col-sm-2 control-label" style="width:18.4%; padding-left: 2.4%; margin-top: 0.9%;">Exam Year</label> 
                                <?php   
                                 $already_selected_value = 2016;
                                 $earliest_year = 1950;
-                                print '<select name="selector6" id="selector6" class="form-control1" style="height:26px;margin-top:0.4px;width: 24.1%;">';
+                                print '<select name="selector7" id="selector7" class="form-control1" style="height:26px;margin-top:0.4px;width: 24.1%;">';
                                 foreach (range(date('Y'), $earliest_year) as $x) {
                                     print '<option value="'.$x.'"'.($x === $already_selected_value ? ' selected="selected"' : '').'>'.$x.'</option>';
                                 }

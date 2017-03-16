@@ -180,7 +180,16 @@ function reportDialog(){
       onClose: function() {},
     });
 
-  $(".dialogModal_content").html('<object data="/back/Jasper/index.php?type=kcse" type="application/pdf" width="100%" height="100%^">alt : <a href="back/Reports.php">Ems Reports</a></object>');
+    var examtype = $('#selector4').find("option:selected").text();
+    var institution = $('#selector1').val();
+    var year = $('#selector1').val();
+    var classid = $('#selector2').val();
+    var streamid = $('#selector3').val();
+    var examtyp = $('#selector4').val();
+    var term = $('#selector6').val();
+    var examyear = $('#selector7').val();
+
+    $(".dialogModal_content").html('<object data="/back/Jasper/index.php?type='+examtype+'&institution='+institution+'&year='+year+'&classid='+classid+'&streamid='+streamid+'&examtype='+examtyp+'&term='+term+'&examyear='+examyear+'" type="application/pdf" width="100%" height="100%^">alt : <a href="back/Reports.php?type='+examtype+'&institution='+institution+'&year='+year+'&classid='+classid+'&streamid='+streamid+'&examtype='+examtyp+'&term='+term+'&examyear='+examyear+'" >Ems Reports</a></object>');
  }
 
 $(document).ready(function() {

@@ -33,7 +33,7 @@
      ems_person.`doc` AS ems_person_doc
 FROM
      `ems_person` ems_person
-WHERE ems_person.`institution` = $P{institution} ]]>
+WHERE ems_person.`institution` = $P{institution}]]>
 	</queryString>
 	<field name="fname" class="java.lang.String">
 		<fieldDescription><![CDATA[]]></fieldDescription>
@@ -106,7 +106,7 @@ WHERE ems_person.`institution` = $P{institution} ]]>
 			</staticText>
 			<image isUsingCache="true">
 				<reportElement x="453" y="2" width="78" height="74" uuid="9f8dde26-97f2-4505-bb55-573f6e6e3f3e"/>
-				<imageExpression><![CDATA["http://192.168.1.40/ems/ci/assets/images/useremail.jpg"]]></imageExpression>
+				<imageExpression><![CDATA["http://192.168.1.207/ems/ci/assets/images/useremail.jpg"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="239" y="53" width="131" height="19" forecolor="#666666" uuid="873c79c7-8020-4440-a0a2-f8c3b7aad044"/>
