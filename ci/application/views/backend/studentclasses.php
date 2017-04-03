@@ -82,7 +82,7 @@
 
                                                    ?>
                                                    <div class="form-groups">
-                                                       <label for="selector1" class="col-sm-2 control-label" style="margin-left: 2%; margin-top: 0.5%;">Institution</label>
+                                                       <label for="selector1" class="col-sm-2 control-label" style="margin-left: 0%; margin-top: 0.5%;">Institution</label>
                                                        <div class="col-sm-8">
                                                            <select onchange="selectChanged(this,table,editor);chooseClasses();"  name="selector1" id="selector1" class="form-control1" style="height:26px;margin-top:0.4px;">
                                                                <?php
@@ -91,7 +91,16 @@
                                                                }
                                                                ?>                     
                                                            </select></div>
-                                                   </div>                                                     
+
+                                                   </div>
+                                                 <div class="row">
+                                                    <div class="form-groups">
+                                                    <label for="selector1" class="col-sm-2 control-label" style="margin-left: 2%; margin-top: 0.5%;"><span style="font-size:0.9em;">Check All : &nbsp; </span>  <input type="checkbox" id="selectall" value="selectall"></label>
+                                                        
+
+                                                    </div>
+                                                  </div>
+
                                                    <div class="grid_3 grid_5">						
                                                        <div class="but_list">
                                                            <div class="well">

@@ -1,6 +1,6 @@
-<title>EMS :: Teachers</title>                     
+<title>EMS :: Staff</title>                     
 <div class="grid_3 grid_5">
-<h3>Teachers</h3>
+<h3>Staff</h3>
                <script>
                    $('#Teachers').css('background-color',activeMenu);
                    $('#9').css('background-color',activeMenu);  
@@ -8,44 +8,41 @@
 <div class="but_list">
   <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
        <ul id="myTab" class="nav nav-tabs" role="tablist">
-        <!-- <li role="presentation" class="active"><a href="#" onClick ="loadInstitutions(1,table,editor)" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">High Schools</a></li>
-         <li role="presentation"><a href="#" onClick ="loadInstitutions(2,table,editor)" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Primary Schools</a></li>
-         <li role="presentation"><a href="#" onClick ="loadInstitutions(3,table,editor)" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Kindergatens</a></li>
-         <li role="presentation" class="dropdown">
-               <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown" aria-controls="myTabDrop1-contents">Others<span class="caret"></span></a>
-               <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents">
-                 <li><a href="#" onClick ="loadInstitutions(4,table,editor)" tabindex="-1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="dropdown1">Universities</a></li>
-                 <li><a href="#" onClick ="loadInstitutions(5,table,editor)" tabindex="-1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="dropdown1">Colleges</a></li>
-                 <li><a href="#" onClick ="loadInstitutions(6,table,editor)" tabindex="-1" role="tab" id="dropdown2-tab" data-toggle="tab" aria-controls="dropdown2">Technical training Institutions</a></li>
-               </ul>
-         </li>-->
-        
-                 <li role="presentation" class="dropdown">
-             <a href="#classes" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown" aria-controls="myTabDrop1-contents"><div id="inst_id"></div><div id="inst_name">Choose an Institution Category<span class="caret"></span></div></a>
-               <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents">
-                <?php
-                  $query = $this->db->query('SELECT el.itemvalue , el.itemname 
-                    FROM ems_lookup el , ems_userinstitution eui 
-                    WHERE el.itemtype = 6
-                    AND eui.type  = el.itemvalue
-                    AND md5(eui.userId) = "'.$_GET['id'].'"
-                    GROUP BY el.itemvalue              
-                '); 
 
-                  foreach ($query->result() as $row)
-                   {
-                     print('<li><a href="#" onClick ="loadInstitutions('.$row->itemvalue.',table,editor,\''.$row->itemname.'\')" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">'.$row->itemname.'</a></li>');
-                   }   
 
-                ?>
-             <!--   <li><a href="#" onClick ="loadInstitutions(1,table,editor,'High Schools')" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">High Schools</a></li>
-                 <li><a href="#" onClick ="loadInstitutions(2,table,editor,'Primary Schools')" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Primary Schools</a></li>
-                 <li><a href="#" onClick ="loadInstitutions(3,table,editor,'Kindergatens')" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Kindergatens</a></li>
-                 <li><a href="#" onClick ="loadInstitutions(4,table,editor,'Universities')" tabindex="-1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="dropdown1">Universities</a></li>
-                 <li><a href="#" onClick ="loadInstitutions(5,table,editor,'Colleges')" tabindex="-1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="dropdown1">Colleges</a></li>
-                 <li><a href="#" onClick ="loadInstitutions(6,table,editor,'Technical training Institutions')" tabindex="-1" role="tab" id="dropdown2-tab" data-toggle="tab" aria-controls="dropdown2">Technical training Institutions</a></li>
-              -->
-               </ul>
+
+<!--         <div id="dialog_contentUsername" class="dialog_contentUsername" style="display:none;">
+        <div class="dialogModal_header">Set Username / Password</div>
+        <div class="dialogModal_content" id="dialogModal_content">
+       <div class="but_list">
+                         <div class="form-group">
+                            <label for="focusedinput" class="col-sm-8 control-label">Username</label>
+                            <div class="col-sm-12">
+                              <input type="text" id="text1" >
+                            </div>
+                          </div> 
+                                                         
+                          <div class="form-group">
+                            <label for="txtarea1" class="col-sm-2 control-label">Password</label>
+                            <div class="col-sm-12"><input type="text" class="form-control1" id="text2" placeholder="Password"></div>
+                          </div> 
+
+                         <div class="form-group"> 
+                         <div class="clearfix"> </div><hr>                         
+                            <div class="col-sm-4"><input type="button" value="Save" onClick="submitUsernamePassword(this)"  class="form-control1" id="submitpass">
+                          </div>            
+                      </div>
+
+            </div>
+            </div> 
+<div class="clearfix"> </div>
+             <div class="dialogModal_footer">
+     
+    </div>  
+        </div> -->
+
+       
+      </ul>
          </li>
             
        </ul>
@@ -80,16 +77,17 @@
 
                                                     ?>
                                                                 <div class="form-groups">
-									<label for="selector1" class="col-sm-2 control-label" style="margin-left: 2%; margin-top: 0.5%;">Select Institution</label>
+									<!-- <label for="selector1" class="col-sm-2 control-label" style="margin-left: 2%; margin-top: 0.5%;">Select Institution</label> -->
 									<div class="col-sm-8">
-                                                                         <select onchange="selectChanged(this,table,editor)" name="selector1" id="selector1" class="form-control1" style="height:26px;margin-top:0.4px;">
+                                         <!--                                <select onchange="selectChanged(this,table,editor)" name="selector1" id="selector1" class="form-control1" style="height:26px;margin-top:0.4px;">
 										<?php
                                                                                     foreach ($query->result() as $row)
                                                                                         {
                                                                                         print('<option value = '.$row->id.'>'.$row->institution_name.'</option>');                                                                                                                                                              
                                                                                         } 
                                                                                 ?>                     
-									</select></div>
+									</select>-->
+									</div>
 								</div>                                                     
                                        <div class="grid_3 grid_5">						
                                         <div class="but_list">
@@ -241,8 +239,14 @@
                                                 <script type="text/javascript" language="javascript" src="<?php echo base_url("assets/Editor/examples/resources/syntax/shCore.js");?>"></script>
                                                 <script type="text/javascript" language="javascript" class="init"></script> 
                                                 <script src="<?php echo base_url("assets/jquery-ui-1.11.4/jquery-ui.min.js");?>"></script>              
-                                                <script src="<?php echo base_url("assets/jquerypic/src/jquery.picture.cut.js");?>"></script>                                                 
-                                                <script type="text/javascript" src="<?php echo base_url("assets/js/back/personteacher.js");?>"></script> 
+                                                <script src="<?php echo base_url("assets/jquerypic/src/jquery.picture.cut.js");?>"></script>
+
+                <!--    <link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/jQuery-Multi-Purpose-Popup-Modal-Plugin-popModal/popModal.min.css");?>">
+      <script type="text/javascript" language="javascript" src="<?php echo base_url("assets/jQuery-Multi-Purpose-Popup-Modal-Plugin-popModal/popModal.min.js"); ?>"></script>-->
+        <script src='<?php echo base_url("assets/jquery-popup-overlay-gh-pages/jquery.popupoverlay.js");?>'></script>
+
+
+                                                <script type="text/javascript" src="<?php echo base_url("assets/js/back/personstaff.js");?>"></script> 
                                                 
          
 						
@@ -258,3 +262,32 @@
 </div>
 </div>
 </div>
+
+
+ <div id="usernamepopup" class="well" style="visibility:hidden;">
+
+ <div class="but_list">
+    <div class="dialogModal_header"><h4>Set Username / Password</h4></div><div class="clearfix"> </div>
+                         <div class="form-group">
+                            <label for="focusedinput" class="col-sm-8 control-label">Username</label>
+                            <div class="col-sm-12">
+                              <input type="hidden" class="form-control1" id="text4" placeholder="Id">
+                              <input type="hidden" class="form-control1" id="text3" placeholder="Id">
+                              <input type="text" class="form-control1"  id="text1"  placeholder="User Name" >
+                            </div>
+                          </div> 
+                                                         
+                          <div class="form-group">
+                            <label for="txtarea1" class="col-sm-2 control-label">Password</label>
+                            <div class="col-sm-12"><input type="password" class="form-control1" id="text2" placeholder="Password"></div>
+                          </div> 
+
+                         <div class="form-group"> 
+                         <div class="clearfix"> </div><hr>                         
+                            <div class="col-sm-4"><input type="button" value="Save" onClick="submitUsernamePassword(this)"  class="form-control1" id="submitpass">
+                          </div>            
+                      </div>
+
+            </div>
+
+ </div>

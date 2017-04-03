@@ -33,8 +33,156 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <![endif]-->
     <script src='<?php echo base_url("assets/js/device.min.js");?>'></script>
 
-  <link rel="stylesheet" href="<?php echo base_url("assets/jssor/dc_parallax.css");?>">
+    <script src='<?php echo base_url("assets/js/jssor.slider-22.2.16.mini.js");?>'></script>
 
+    <link rel="stylesheet" href="<?php echo base_url("assets/jssor/dc_parallax.css");?>">
+
+
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+
+
+            var _SlideshowTransitions = [{
+            $Duration: 600,
+            $Delay: 50,
+            $Cols: 8,
+            $Rows: 4,
+            $FlyDirection: 5,
+            $Formation:
+            $JssorSlideshowFormations$.$FormationZigZag,
+            $Assembly: 1028,
+            $ChessMode: { $Column: 3, $Row: 12 },
+            $Easing: { $Left: $JssorEasing$.$EaseInCubic, $Top: $JssorEasing$.$EaseInCubic, $Opacity: $JssorEasing$.$EaseOutQuad },
+            $Opacity: 2
+        }];
+          var options = {
+              $DragOrientation: 3,
+              $AutoPlay: true,
+              $SlideDuration: 1500,
+              $AutoPlayInterval: 4500,
+              $SlideshowOptions: {                                //Options which specifies enable slideshow or not
+                  $Class: $JssorSlideshowRunner$,                 //Class to create instance of slideshow
+                  $Transitions: _SlideshowTransitions,            //Transitions to play slide, see jssor slideshow transition builder
+                  $TransitionsOrder: 1,                           //The way to choose transition to play slide, 1 Sequence, 0 Random
+                  $ShowLink: 2,                                   //0 After Slideshow, 2 Always
+                  $ContentMode: false                             //Whether to trait content as slide, otherwise trait an image as slide
+              },
+                $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+              }
+          };
+          var jssor_1_slider = new $JssorSlider$("jssor_1", options);
+
+          /*  var jssor_1_SlideoTransitions = [
+              [{b:5500,d:3000,o:-1,r:240,e:{r:2}}],
+              [{b:-1,d:1,o:-1,c:{x:51.0,t:-51.0}},{b:0,d:1000,o:1,c:{x:-51.0,t:51.0},e:{o:7,c:{x:7,t:7}}}],
+              [{b:-1,d:1,o:-1,sX:9,sY:9},{b:1000,d:1000,o:1,sX:-9,sY:-9,e:{sX:2,sY:2}}],
+              [{b:-1,d:1,o:-1,r:-180,sX:9,sY:9},{b:2000,d:1000,o:1,r:180,sX:-9,sY:-9,e:{r:2,sX:2,sY:2}}],
+              [{b:-1,d:1,o:-1},{b:3000,d:2000,y:180,o:1,e:{y:16}}],
+              [{b:-1,d:1,o:-1,r:-150},{b:7500,d:1600,o:1,r:150,e:{r:3}}],
+              [{b:10000,d:2000,x:-379,e:{x:7}}],
+              [{b:10000,d:2000,x:-379,e:{x:7}}],
+              [{b:-1,d:1,o:-1,r:288,sX:9,sY:9},{b:9100,d:900,x:-1400,y:-660,o:1,r:-288,sX:-9,sY:-9,e:{r:6}},{b:10000,d:1600,x:-200,o:-1,e:{x:16}}]
+            ];
+
+           
+
+            var jssor_1_options = {
+              $AutoPlay: true,
+              $SlideDuration: 800,
+              $SlideEasing: $Jease$.$OutQuint,
+              $CaptionSliderOptions: {
+                $Class: $JssorCaptionSlideo$,
+                $Transitions: jssor_1_SlideoTransitions,
+                 $TransitionsOrder: 1,                           //The way to choose transition to play slide, 1 Sequence, 0 Random
+                $ShowLink: 2,                                   //0 After Slideshow, 2 Always
+                $ContentMode: false
+                //$Transitions: jssor_1_SlideoTransitions
+              },
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+              }
+            };
+
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);*/
+
+            /*responsive code begin*/
+            /*remove responsive code if you don't want the slider scales while window resizing*/
+            function ScaleSlider() {
+                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+                if (refSize) {
+                    refSize = Math.min(refSize, 1920);
+                    jssor_1_slider.$ScaleWidth(refSize);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+            ScaleSlider();
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+            /*responsive code end*/
+        });
+    </script>
+    <style>
+        /* jssor slider bullet navigator skin 05 css */
+        /*
+        .jssorb05 div           (normal)
+        .jssorb05 div:hover     (normal mouseover)
+        .jssorb05 .av           (active)
+        .jssorb05 .av:hover     (active mouseover)
+        .jssorb05 .dn           (mousedown)
+        */
+        .jssorb05 {
+            position: absolute;
+        }
+        .jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
+            position: absolute;
+            /* size of bullet elment */
+            width: 16px;
+            height: 16px;
+            background: url('<?php echo base_url("assets/images/b05.png");?>') no-repeat;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .jssorb05 div { background-position: -7px -7px; }
+        .jssorb05 div:hover, .jssorb05 .av:hover { background-position: -37px -7px; }
+        .jssorb05 .av { background-position: -67px -7px; }
+        .jssorb05 .dn, .jssorb05 .dn:hover { background-position: -97px -7px; }
+
+        /* jssor slider arrow navigator skin 22 css */
+        /*
+        .jssora22l                  (normal)
+        .jssora22r                  (normal)
+        .jssora22l:hover            (normal mouseover)
+        .jssora22r:hover            (normal mouseover)
+        .jssora22l.jssora22ldn      (mousedown)
+        .jssora22r.jssora22rdn      (mousedown)
+        */
+        .jssora22l, .jssora22r {
+            display: block;
+            position: absolute;
+            /* size of arrow element */
+            width: 40px;
+            height: 58px;
+            cursor: pointer;
+            background: url('<?php echo base_url("assets/images/a22.png");?>') center center no-repeat;
+            overflow: hidden;
+        }
+        .jssora22l { background-position: -10px -31px; }
+        .jssora22r { background-position: -70px -31px; }
+        .jssora22l:hover { background-position: -130px -31px; }
+        .jssora22r:hover { background-position: -190px -31px; }
+        .jssora22l.jssora22ldn { background-position: -250px -31px; }
+        .jssora22r.jssora22rdn { background-position: -310px -31px; }
+    </style>
 
 
 
@@ -77,7 +225,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <div class="container top-sect">
         <div class="navbar-header">
           <h1 class="navbar-brand">
-            <a data-type='rd-navbar-brand'  href="./">Ems<small>portal</small></a>
+            <a data-type='rd-navbar-brand'  href="./">e-shule<small>portal</small></a>
           </h1>
           <a class="search-form_toggle" href="#"></a>
         </div>
@@ -136,136 +284,78 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div style="width:100%; margin:0 auto; padding:0px; position:relative;"> <!-- define slider container width (strict enforce) -->
 <div id="da-slider" class="da-slider">
      
-    <!-- Slide 1 -->
-    <div class="da-slide">
 
-         <div id="camera" class="camera_wrap">
 
-            <div data-src="<?php echo base_url("assets/images/frontend/Male-African-Collega-Student-400x200.jpg");?>">
-             
+
+
+
+    <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:1300px;height:310px;overflow:hidden;visibility:hidden;">
+        <!-- Loading Screen -->
+        <div data-u="loading" style="position:absolute;top:0px;left:0px;background-color:rgba(0,0,0,0.7);">
+            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+            <div style="position:absolute;display:block;background:url('<?php echo base_url("assets/images/loading.gif");?>') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+        </div>
+        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1300px;height:500px;overflow:hidden;">
+            <div>
+                <img data-u="image" src="<?php echo base_url("assets/images/frontend/newslider5.jpg");?>" />
+                <div style="position:absolute;top:30px;left:30px;width:480px;height:120px;z-index:0;font-size:50px;color:#ffffff;line-height:60px;">e-shule</div>
+                <div style="position:absolute;top:300px;left:30px;width:480px;height:120px;z-index:0;font-size:30px;color:#ffffff;line-height:38px;">education management system</div>
+
+                <!-- 
+                 <div data-u="caption" data-t="0" style="position:absolute;top:10px;left:600px;width:245px;height:300px;z-index:0;">
+                    <img style="position:absolute;top:0px;left:0px;width:445px;height:300px;z-index:0;" src="<?php echo base_url("assets/images/frontend/girl.png");?>" />              
+                </div>
+
+               <div data-u="caption" data-t="0" style="position:absolute;top:100px;left:600px;width:445px;height:300px;z-index:0;">
+                    <img style="position:absolute;top:0px;left:0px;width:445px;height:300px;z-index:0;" src="<?php echo base_url("assets/images/c-phone.png");?>" />
+                    <img data-u="caption" data-t="1" style="position:absolute;top:70px;left:130px;width:102px;height:78px;z-index:0;" src="<?php echo base_url("assets/images/c-jssor-slider.png");?>" />
+                    <img data-u="caption" data-t="2" style="position:absolute;top:153px;left:163px;width:80px;height:53px;z-index:0;" src="<?php echo base_url("assets/images/c-text.png");?>" />
+                    <img data-u="caption" data-t="3" style="position:absolute;top:60px;left:220px;width:140px;height:90px;z-index:0;" src="<?php echo base_url("assets/images/c-fruit.png");?>" />
+                    <img data-u="caption" data-t="4" style="position:absolute;top:-123px;left:121px;width:200px;height:155px;z-index:0;" src="<?php echo base_url("assets/images/c-navigator.png");?>" />
+                </div> -->
+             <!--    <div data-u="caption" data-t="5" style="position:absolute;top:10px;left:650px;width:470px;height:220px;z-index:0;">
+                    <img style="position:absolute;top:0px;left:0px;width:470px;height:220px;z-index:0;" src="<?php echo base_url("assets/images/c-phone-horizontal.png");?>" />
+                    <div style="position:absolute;top:4px;left:45px;width:379px;height:213px;z-index:0; overflow:hidden;">
+                        <img data-u="caption" data-t="6" style="position:absolute;top:0px;left:0px;width:379px;height:213px;z-index:0;" src="<?php echo base_url("assets/images/c-slide-1.jpg");?>" />
+                        <img data-u="caption" data-t="7" style="position:absolute;top:0px;left:379px;width:379px;height:213px;z-index:0;" src="<?php echo base_url("assets/images/c-slide-3.jpg");?>" />
+                    </div>
+                    <img style="position:absolute;top:4px;left:45px;width:379px;height:213px;z-index:0;" src="<?php echo base_url("assets/images/c-navigator-horizontal.png");?>" />
+                    <img data-u="caption" data-t="8" style="position:absolute;top:740px;left:1600px;width:257px;height:300px;z-index:0;" src="<?php echo base_url("assets/images/c-finger-pointing.png");?>" />
+                </div> -->
             </div>
-          </div>
-               
-                  
-       <h2> Education Resource Center</h2> 
-          
-                    <p>
-                      Building a world in which people in underdeveloped and developing countries have 
-            similar access to educational facilities
-            and infrastructure as those in developed countries<span></span>.
-                    </p> 
-        <div class="da-img"><img class="sliderimag" src="<?php echo base_url("assets/images/frontend/slider1.jpg");?>" alt="" /></div> 
-    </div>
-     
-    <!-- Slide 2 -->
-    <div class="da-slide">
-       <div class="da-img">
-        <img class="sliderimag" src="<?php echo base_url("assets/images/frontend/slider2.png");?>" alt="" /></div>
-        <h2>Making Real Change Happen</h2>
-        <p>
-            Inspire the world by building innovatve solution.<span> </span>.
-        </p>
-        
-    </div>
-     
-    <!-- Slide 3 -->
-    <div class="da-slide">
-        <h2>EMS Solution</h2>
-       <p>
-        Develop an online data-driven portal where each public primary school shall create an account,<span>upload and store KCPE and internal examinatrions</span>.
-        </p>
-        <div class="da-img"><img class="sliderimag" src="<?php echo base_url("assets/images/frontend/slider3.jpg");?>" alt="" /></div>
+
+            <div>
+                <img data-u="image" src="<?php echo base_url("assets/images/frontend/newslider3.jpg");?>" />
+            </div>
+
+
+            <div>
+                <img data-u="image" src="<?php echo base_url("assets/images/frontend/slider4.jpg");?>" />
+            </div>
+            <a data-u="any" href="http://www.jssor.com" style="display:none">Full Width Slider</a>
+            <div>
+                <img data-u="image" src="<?php echo base_url("assets/images/frontend/laptopproject4.jpg");?>" />
+            </div>
+        </div>
+        <!-- Bullet Navigator -->
+        <div data-u="navigator" class="jssorb05" style="bottom:16px;right:16px;" data-autocenter="1">
+            <!-- bullet navigator item prototype -->
+            <div data-u="prototype" style="width:16px;height:16px;"></div>
+        </div>
+        <!-- Arrow Navigator -->
+        <span data-u="arrowleft" class="jssora22l" style="top:0px;left:12px;width:40px;height:58px;" data-autocenter="2"></span>
+        <span data-u="arrowright" class="jssora22r" style="top:0px;right:12px;width:40px;height:58px;" data-autocenter="2"></span>
     </div>
 
-    <div class="da-slide">       
-        <div class="da-img"><img class="sliderimag" src="<?php echo base_url("assets/images/frontend/slider4.jpg");?>" alt="" /></div>
-    </div>
-    <div class="da-slide">       
-        <div class="da-img"><img class="sliderimag" src="<?php echo base_url("assets/images/frontend/slider5.jpg");?>" alt="" /></div>
-    </div>
-     
-    <!-- Slide 3 -->
-  <!--   <div class="da-slide">
-        <h2>24/7 Support</h2>
-        <p>Email & phone support whenever you need it. We're here 7 days a week! Sed ullamcorper odio commodo velit rutrum ut aliquam velit volutpat. Vestibulum hendrerit tristique ornare. Nam vitae libero sapien.</p>
-        <a href="#" class="da-link">Read more</a>
-        <div class="da-img"><img src="dcodes/sliders/images/parallax/4.png" alt="image01" /></div>
-    </div> -->
-     
-    <!-- Slide 4 -->
-     
-    <!-- navigation controls -->
-    <nav class="da-arrows">
-        <span class="da-arrows-prev"></span>
-        <span class="da-arrows-next"></span>
-    </nav>
+
+
+
      
 </div> <!-- /da-slider -->
 </div>
 <!-- DC Parallax Slider End -->
 
-          <!-- 
-          <div id="camera" class="camera_wrap">
-
-
-
-
-     <div data-src="<?php echo base_url("assets/images/frontend/Male-African-Collega-Student-400x200.jpg");?>">
-              <div class="camera_caption fadeIn">
-			  			    		  
-			  
-                <div class="jumbotron jumbotron1" style="">
-                  <div class="row">
-
-
-				  <div class="col-lg-8">
-				  <em>
-                      <h3> Education Resource Center</h3>  
-                  </em>
-                  <div class="wrap">
-                    <p>
-                      Building a world in which people in <a href="<?php echo base_url("index.php/signin");?>" class="btn-link fa-angle-right"></a> underdeveloped and developing countries have 
-					  similar access to educational facilities
-					  and infrastructure as those in developed countries<span></span>.
-                    </p>
-                    
-                  </div>
-                  </div>	
-              </div>				  
-                </div>
-              </div>
-            </div>
-            <div data-src="<?php echo base_url("assets/images/frontend/minority-student-grants.jpg");?>">
-              <div class="camera_caption fadeIn">
-                <div class="jumbotron jumbotron2">
-                  <em>
-                    <h3> Making Real Change Happen  </h3>
-                  </em>
-                  <div class="wrap">  
-                    <p>
-                      Inspire the world by building innovatve solution.<span> </span>.
-                    </p>
-                    <a href="#" class="btn-link hov_prime fa-angle-right"></a>
-                  </div>  
-                </div>
-              </div>
-            </div>
-            <div data-src="<?php echo base_url("assets/images/frontend/african-american-scholarships.jpg");?>">
-              <div class="camera_caption fadeIn">
-                <div class="jumbotron">
-                  <em>
-                  <h3>   SOLUTIONS  </h3>
-                  </em>
-                  <div class="wrap">
-                    <p>
-                      Develop an online data-driven portal where each public primary school shall create an account,<span>upload and store KCPE and internal examinatrions</span>.
-                    </p>
-                    <a href="#" class="btn-link fa-angle-right"></a>
-                  </div>  
-                </div>
-              </div>
-            </div> 
-          </div>-->
+   
         </div>
     
 
@@ -275,8 +365,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="row">
                   <div class="col-md-12 col-sm-12">
                     <p>
-                    <h3>EMS-Portal</h3>
-                    The EMS online data-driven portal enables each public primary school shall create an account, upload and store KCPE and internal examinations’ data in a centralized database. 
+                    <h3>e-shule-Portal</h3>
+                    The e-shule online data-driven portal enables each public primary school shall create an account, upload and store KCPE and internal examinations’ data in a centralized database. 
                     The data will be analyzed to give information to various users on the state of education in a school and/or a group of schools in a given area. 
                     This data and information will be available to any interested party..
                     </p>
@@ -369,7 +459,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </section>
 
 
-
+<!-- 
           <div class="row wow fadeIn" data-wow-duration='2s'>
             <div class="col-md-4 col-sm-12 col-xs-12">
               <div class="thumbnail thumb-shadow">
@@ -419,7 +509,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
               </div>              
             </div>
-          </div>
+          </div> -->
+
         </div>        
       </section>
       

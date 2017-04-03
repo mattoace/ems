@@ -171,9 +171,35 @@ $(document).ready(function() {
 
 
 
-     },"json");  
 
 
+    $('#selectall').change(function() {
+        // this will contain a reference to the checkbox   
+        if (this.checked) { 
+
+            var cells = table
+                .cells( ":checkbox" )
+                .nodes();
+//alert(cells.toSource());
+
+     $(cells).toggleClass('selected');
+
+ //$(':checkbox').prop('checked', true);
+
+
+//$(':checkbox', table.rows().nodes()).prop('checked', this.checked);
+
+         //  $( cells ).prop('content', '1');
+
+        } else {
+            // the checkbox is now no longer checked
+        }
+    });
+
+
+
+
+},"json");  
 
 });
 

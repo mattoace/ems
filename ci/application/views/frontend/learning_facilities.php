@@ -7,7 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="format-detection" content="telephone=no"/>
     <link rel="icon" href="<?php echo base_url("assets/images/favicon.ico");?>"  type="image/x-icon">
-    <title>EMS</title>
+    <title>e-shule</title>
 
     <!-- Bootstrap -->
     <link href="<?php echo base_url("assets/css/bootstrap.css");?>"  rel="stylesheet">
@@ -193,7 +193,7 @@ thead {
       <div class="container top-sect">
         <div class="navbar-header">
           <h1 class="navbar-brand">
-            <a data-type='rd-navbar-brand'  href="./">Ems<small>portal</small></a>
+            <a data-type='rd-navbar-brand'  href="./">e-shule<small>portal</small></a>
           </h1>
           <a class="search-form_toggle" href="#"></a>
         </div>
@@ -291,7 +291,7 @@ thead {
           <div class ="col-md-6">
               <div id="contents" >
               <div id="searchfieldschool" >
-                <form>Select a school :<input type="text" name="school" class="biginput" style="width:100%;" id="school"></form>
+                <form>Sub county :<input type="text" name="school" class="biginput" style="width:100%;" id="school"></form>
               </div>     
               <div id="outputbox3">
                 <p id="outputcontent3"></p>
@@ -312,7 +312,7 @@ thead {
                                                                <!-- <th>District</th>-->
                                                                 <th>County</th>
                                                                 <th>Sub county</th>
-                                                                <th>Town</th>
+                                                                <th>Zone</th>
                                                                 <th width="18%">Address</th>
                                                                 <th>Founded</th>
                                                             </tr>

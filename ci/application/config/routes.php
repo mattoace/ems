@@ -30,7 +30,13 @@ $route['institutions'] = 'pages/bkend/institutions';
 $route['students'] = 'pages/bkend/students';
 $route['users'] = 'pages/bkend/users';
 $route['roles'] = 'pages/bkend/roles';
+$route['institutionroles'] = 'pages/bkend/institutionroles';
 $route['location'] = 'pages/bkend/location';
+$route['staff'] = 'pages/bkend/staff';
+$route['sroles'] = 'pages/bkend/sroles';
+$route['zonereports'] = 'pages/bkend/zonereports';
+$route['subcountyreports'] = 'pages/bkend/subcountyreports';
+$route['countyreports'] = 'pages/bkend/countyreports';
 
 $route['classes'] = 'pages/bkend/classes';
 $route['teachers'] = 'pages/bkend/teachers';

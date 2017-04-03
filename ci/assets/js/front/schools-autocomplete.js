@@ -85,6 +85,22 @@ $(function(){
                 {
                         "targets": [ 0 ],
                         "visible": false
+                 },
+                                 {
+                        "targets": [ 2 ],
+                        "visible": false
+                 },
+                                 {
+                        "targets": [ 4 ],
+                        "visible": true
+                 },
+                                 {
+                        "targets": [ 5 ],
+                        "visible": false
+                 },
+                                 {
+                        "targets": [ 6 ],
+                        "visible": false
                  }
                 ]
          
@@ -107,7 +123,7 @@ $(function(){
        
         $.ajax({
             async: false,  
-            url: "/back/Load_SchoolsFiltered.php?id="+school,
+            url: "/back/Load_SubcountyFiltered.php?id="+school,
             type: 'POST',
             success: function(data) {                     
                 myelement3[0] = data;                   
@@ -121,8 +137,10 @@ $(function(){
           $('#school').autocomplete({
           lookup: ctext3,
           onSelect: function (suggestion) { 
-             setCookie("schoolid",suggestion.data,1);     
-             openInNewTab("school");
+            // setCookie("schoolid",suggestion.data,1);     
+            // openInNewTab("school");
+              loadUrl = "/back/Load_SchoolsFilteredGridSubCounty.php?county="+school+"&id="+suggestion.data;
+              table.ajax.url(loadUrl).load(); 
           }
         });      
 

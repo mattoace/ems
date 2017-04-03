@@ -42,7 +42,7 @@
       <div class="container top-sect">
         <div class="navbar-header">
           <h1 class="navbar-brand">
-            <a data-type='rd-navbar-brand'  href="./">Ems<small>portal</small></a>
+            <a data-type='rd-navbar-brand'  href="./">e-shule<small>portal</small></a>
           </h1>
           <a class="search-form_toggle" href="#"></a>
         </div>

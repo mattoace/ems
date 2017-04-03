@@ -85,12 +85,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="sign-up2">
 								<form>
 									<select name="schoolcategory" id="schoolcategory" class="form-control1" style="margin-top: 16px;">
-                                           <option value="1">High Schools</option>
+                                          <!--  <option value="1">High Schools</option> -->
                                            <option value="2">Primary Schools</option>
                                            <option value="3">Kindergatens</option>
-                                           <option value="4">Universities</option>
+                                    <!--        <option value="4">Universities</option>
                                            <option value="5">Colleges</option>
-                                           <option value="6">Technical Training Institutions</option>                                   
+                                           <option value="6">Technical Training Institutions</option>  -->                                  
                                      </select>
 								</form>
 							</div>
@@ -161,7 +161,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                         <div class="clearfix"> </div>
                                                 
-						<div class="sign-u">
+					<!-- 	<div class="sign-u">
 							<div class="sign-up1">
 								<h5>Photo* :</h5>
 							</div>
@@ -174,7 +174,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                             
 							</div>
 							<div class="clearfix"> </div>
-						</div>
+						</div> -->
 						<h6>Login Information</h6>
 
 
