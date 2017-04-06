@@ -139,15 +139,22 @@ $(document).ready(function() {
 		buttons: [	
                        {
                             extend: "selectedSingle",
-                            text: "Print School Pdf",
+                            text: "Print All School Pdf",
                             action: function ( e, dt, node, config ) {
                                printSchoolPdf(this);
                             }
                         },{
                             extend: "selectedSingle",
-                            text: "Print Teachers Pdf",
+                            text: "Print All Teachers Pdf",
                             action: function ( e, dt, node, config ) {
                                printTeachersPdf(this);
+                            }
+                          },
+                          {
+                            extend: "selectedSingle",
+                            text: "Print Teachers in Selected School Pdf",
+                            action: function ( e, dt, node, config ) {
+                               printTeacherSchoolPdf(this);
                             }
                           },
                           {
@@ -207,38 +214,22 @@ $(document).ready(function() {
    
     },"json");     
  });
-
     
 
-/*function submitInstitutionDetails(ed){
-    var selRow = table.row('.selected').data(); //selRow.toSource()
-    var arrSpl = selRow['DT_RowId'].split('_'); 
-    alert("Selected = "+arrSpl[1]);    
-}*/
 
 function printSchoolPdf(ed){  
     var selRow = table.row('.selected').data(); 
     var arrSpl = selRow['DT_RowId'].split('_'); 
     $("#reportView").html('<object data="/back/Jasper/zoneschools.php?id='+arrSpl[1]+'&zone='+zone+' " type="application/pdf" width="1000px" height="700px">alt : Schools in my Zone</object>');
+    $('#reportView').popup('show');     
+    
+}
+
+function printTeacherSchoolPdf(ed){
+    var selRow = table.row('.selected').data(); 
+    var arrSpl = selRow['DT_RowId'].split('_'); 
+    $("#reportView").html('<object data="/back/Jasper/zonesteachers.php?id='+arrSpl[1]+'&zone='+zone+' " type="application/pdf" width="1000px" height="700px">alt : Schools in my Zone</object>');
     $('#reportView').popup('show');   
-
-
-/*   $('.dialog_content').dialogModal({
-      placement : 'bottomLeft',
-      showCloseBut : true,
-      html : '',
-      onOkBut: function() {},
-      onCancelBut: function() {},
-      onLoad: function() {
-      	 $(".dialogModal_content").html('<object data="/back/Jasper/zoneschools.php?id='+arrSpl[1]+'" type="application/pdf" width="1000px" height="700px">alt : Schools in my Zone</object>');
-     
-    
-      },
-      onClose: function() {},
-    });*/
-
-   
-    
 }
 
 function printTeachersPdf(ed){

@@ -43,15 +43,7 @@
                      print('<li><a href="#" onClick ="loadInstitutions('.$row->itemvalue.',tablesMarks,editorMarks,\''.$row->itemname.'\')" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">'.$row->itemname.'</a></li>');
                    }   
 
-                ?>
-
-                <!-- <li><a href="#" onClick ="loadInstitutions(1,tablesMarks,editorMarks,'High Schools')" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">High Schools</a></li>
-                 <li><a href="#" onClick ="loadInstitutions(2,tablesMarks,editorMarks,'Primary Schools')" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Primary Schools</a></li>
-                 <li><a href="#" onClick ="loadInstitutions(3,tablesMarks,editorMarks,'Kindergatens')" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Kindergatens</a></li>
-                 <li><a href="#" onClick ="loadInstitutions(4,tablesMarks,editorMarks,'Universities')" tabindex="-1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="dropdown1">Universities</a></li>
-                 <li><a href="#" onClick ="loadInstitutions(5,tablesMarks,editorMarks,'Colleges')" tabindex="-1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="dropdown1">Colleges</a></li>
-                 <li><a href="#" onClick ="loadInstitutions(6,tablesMarks,editorMarks,'Technical training Institutions')" tabindex="-1" role="tab" id="dropdown2-tab" data-toggle="tab" aria-controls="dropdown2">Technical training Institutions</a></li>
-               -->
+                ?>             
                </ul>
          </li> 
        </ul>
@@ -63,8 +55,7 @@
                      <div class="well">
 
                          <?php 
-
-                         //$query = $this->db->query('SELECT id,institution_name FROM ems_institution WHERE type = 1'); 
+   
                               $queryU = $this->db->query('SELECT eui.institution,eui.type,eu.is_admin FROM ems_userinstitution eui,ems_users eu
                               WHERE
                               eui.userId = eu.id
@@ -148,17 +139,24 @@
          </div>
          
          
-           <div id="myTabContent" class="tab-content">
-               
-             <!--  <ul id="myTab" class="nav nav-tabs" role="tablist">
-                 <li role="presentation" class="active"><a href="#subjectgrades" id="home-tab" role="tab" data-toggle="tab" aria-controls="subjectgrades" aria-expanded="true">Exam Grade Entry</a></li>
-                 <li role="presentation" class="inactive"><a href="#meangrade" id="mean-grade" role="tab" data-toggle="tab" aria-controls="meangrade" aria-expanded="true">Total Mean Grade Entry</a></li>
-               </ul>-->
+           <div id="myTabContent" class="tab-content">               
+        
                
            <div role="tabpanel" class="tab-pane fade in active" id="subjectgrades" aria-labelledby="home-tab">
                       <div class="alert alert-success" role="alert"> 
-                        <button type="button" onClick="reportDialog()" class="btn btn_5 btn-lg btn-default">Generate Report</button>
-                      </div>                    
+                        <div class="row">
+                          <div class="col-sm-1">
+                        <button type="button" onClick="reportDialog()" class="btn btn_5 btn-sm btn-default">Generate Report</button>
+                         </div>
+                         <div class="col-sm-1">
+                            <button type="button" onClick="reportDialogTabular()" class="btn btn_5 btn-sm btn-default">Tabular View Report</button>
+                         </div>
+                        <div class="col-sm-10">
+                        </div>
+                       </div>
+                      </div> 
+
+                                      
                 </div> 
 
                     <style>
@@ -180,27 +178,8 @@
                                 <button type="button" data-dialogModalBut="ok">Print</button>
                                 <button type="button" data-dialogModalBut="cancel">cancel</button>
                             </div>
-                        </div>
+                        </div>               
 
-
-               
-               	 <!-- <div role="tabpanel" class="tab-pane fade" id="meangrade" aria-labelledby="mean-grade">
-                      <div class="alert alert-success" role="alert">
-                                <section>
-                                    <table id="MeanGrade" class="display" cellspacing="0" width="100%">
-                                        <thead>
-                                            <tr>
-                                                <th></th>
-                                                <th>Points</th>
-                                                <th>Grade</th>                                             
-                                                <th>Comments</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
-                                </section>
-                       </div>
-                  </div>-->
-               
                
                <!--jquery ui editor-->
                        <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/DataTables-1.10.11/media/css/dataTables.min.css"); ?>">jquery.-->
@@ -228,9 +207,12 @@
                         <link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/jQuery-Multi-Purpose-Popup-Modal-Plugin-popModal/popModal.min.css");?>">
                         <script type="text/javascript" language="javascript" src="<?php echo base_url("assets/jQuery-Multi-Purpose-Popup-Modal-Plugin-popModal/popModal.min.js"); ?>"></script>
 
+                          <script src='<?php echo base_url("assets/jquery-popup-overlay-gh-pages/jquery.popupoverlay.js");?>'></script>
+
                         <script type="text/javascript" src="<?php echo base_url("assets/js/back/reports.js"); ?>"></script>
 
             </div>
         </div>
     </div>
 </div>
+ <div id="reportView" class="well" style="visibility:hidden;">

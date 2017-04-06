@@ -152,6 +152,13 @@ $(document).ready(function() {
                           },
                           {
                             extend: "selectedSingle",
+                            text: "Print Teachers in Selected School Pdf",
+                            action: function ( e, dt, node, config ) {
+                               printTeacherSchoolPdf(this);
+                            }
+                          },
+                          {
+                            extend: "selectedSingle",
                             text: "Zone Calendar of Events",
                             action: function ( e, dt, node, config ) {
                                printCalendarOfEvents(this);
@@ -204,21 +211,29 @@ $(document).ready(function() {
 function printSchoolPdf(ed){  
     var selRow = table.row('.selected').data(); 
     var arrSpl = selRow['DT_RowId'].split('_'); 
-    $("#reportView").html('<object data="/back/Jasper/subcountyschools.php?id='+arrSpl[1]+'&subcounty='+subcounty+' " type="application/pdf" width="1000px" height="700px">alt : Schools in my Zone</object>');
+    $("#reportView").html('<object data="/back/Jasper/subcountyschools.php?id='+arrSpl[1]+'&subcounty='+subcounty+' " type="application/pdf" width="1000px" height="700px">alt : Schools in my Sub County</object>');
     $('#reportView').popup('show'); 
     
 }
 
+function printTeacherSchoolPdf(ed){
+    var selRow = table.row('.selected').data(); 
+    var arrSpl = selRow['DT_RowId'].split('_'); 
+    $("#reportView").html('<object data="/back/Jasper/subcountysteachers.php?id='+arrSpl[1]+'&subcounty='+subcounty+' " type="application/pdf" width="1000px" height="700px">alt : Schools in my Sub County</object>');
+    $('#reportView').popup('show');   
+}
+
+
 function printTeachersPdf(ed){
     var selRow = table.row('.selected').data(); 
     var arrSpl = selRow['DT_RowId'].split('_'); 
-    $("#reportView").html('<object data="/back/Jasper/subcountyteachers.php?id='+arrSpl[1]+'&subcounty='+subcounty+' " type="application/pdf" width="1000px" height="700px">alt : Schools in my Zone</object>');
+    $("#reportView").html('<object data="/back/Jasper/subcountyteachers.php?id='+arrSpl[1]+'&subcounty='+subcounty+' " type="application/pdf" width="1000px" height="700px">alt : Schools in my Sub County</object>');
     $('#reportView').popup('show'); 
 }
 
 function printCalendarOfEvents(ed){
 
-	 var selRow = table.row('.selected').data(); 
+	   var selRow = table.row('.selected').data(); 
      var arrSpl = selRow['DT_RowId'].split('_'); 
 
 }

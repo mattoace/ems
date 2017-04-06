@@ -152,6 +152,14 @@ $(document).ready(function() {
                           },
                           {
                             extend: "selectedSingle",
+                            text: "Print Teachers in Selected School Pdf",
+                            action: function ( e, dt, node, config ) {
+                               printTeacherSchoolPdf(this);
+                            }
+                          }
+                          ,
+                          {
+                            extend: "selectedSingle",
                             text: "Zone Calendar of Events",
                             action: function ( e, dt, node, config ) {
                                printCalendarOfEvents(this);
@@ -204,15 +212,23 @@ $(document).ready(function() {
 function printSchoolPdf(ed){  
     var selRow = table.row('.selected').data(); 
     var arrSpl = selRow['DT_RowId'].split('_'); 
-    $("#reportView").html('<object data="/back/Jasper/countyschools.php?id='+arrSpl[1]+'&county='+county+' " type="application/pdf" width="1000px" height="700px">alt : Schools in my Zone</object>');
+    $("#reportView").html('<object data="/back/Jasper/countyschools.php?id='+arrSpl[1]+'&county='+county+' " type="application/pdf" width="1000px" height="700px">alt : Schools in my County</object>');
     $('#reportView').popup('show'); 
     
 }
 
+function printTeacherSchoolPdf(ed){
+    var selRow = table.row('.selected').data(); 
+    var arrSpl = selRow['DT_RowId'].split('_'); 
+    $("#reportView").html('<object data="/back/Jasper/countysteachers.php?id='+arrSpl[1]+'&county='+county+' " type="application/pdf" width="1000px" height="700px">alt : Schools in my County</object>');
+    $('#reportView').popup('show');   
+}
+
+
 function printTeachersPdf(ed){
     var selRow = table.row('.selected').data(); 
     var arrSpl = selRow['DT_RowId'].split('_'); 
-    $("#reportView").html('<object data="/back/Jasper/countyteachers.php?id='+arrSpl[1]+'&county='+county+' " type="application/pdf" width="1000px" height="700px">alt : Schools in my Zone</object>');
+    $("#reportView").html('<object data="/back/Jasper/countyteachers.php?id='+arrSpl[1]+'&county='+county+' " type="application/pdf" width="1000px" height="700px">alt : Schools in my County</object>');
     $('#reportView').popup('show'); 
 }
 

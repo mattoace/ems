@@ -3,18 +3,7 @@
     <h3>Statistics : Zone</h3>
     <div class="but_list">
         <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
-            <ul id="myTab" class="nav nav-tabs" role="tablist">
-               <!-- <li role="presentation" class="active"><a href="#" onClick ="loadInstitutions(1, table, m_editor)" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">High Schools</a></li>
-                <li role="presentation"><a href="#" onClick ="loadInstitutions(2, table, m_editor)" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Primary Schools</a></li>
-                <li role="presentation"><a href="#" onClick ="loadInstitutions(3, table, m_editor)" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">Kindergatens</a></li>
-                <li role="presentation" class="dropdown">
-                    <a href="#" id="myTabDrop1" class="dropdown-toggle" data-toggle="dropdown" aria-controls="myTabDrop1-contents">Others<span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents">
-                        <li><a href="#" onClick ="loadInstitutions(4, table, m_editor)" tabindex="-1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="dropdown1">Universities</a></li>
-                        <li><a href="#" onClick ="loadInstitutions(5, table, m_editor)" tabindex="-1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="dropdown1">Colleges</a></li>
-                        <li><a href="#" onClick ="loadInstitutions(6, table, m_editor)" tabindex="-1" role="tab" id="dropdown2-tab" data-toggle="tab" aria-controls="dropdown2">Technical training Institutions</a></li>
-                    </ul>
-                </li>-->
+            <ul id="myTab" class="nav nav-tabs" role="tablist">             
                
                <script>
                    $('#Education').css('background-color',activeMenu);
@@ -124,15 +113,6 @@
         </div>
     </div>
 </div>
-
-<!-- <div id="dialog_content" class="dialog_content" style="display:none;">
-    <div class="dialogModal_header">Ems : Report</div>
-    <div class="dialogModal_content" id="dialogModal_content">
-    </div>
-    <div class="dialogModal_footer">
-
-    </div>
-</div> -->
 
  <div id="reportView" class="well" style="visibility:hidden;">
 
