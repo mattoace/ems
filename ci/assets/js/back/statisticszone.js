@@ -163,7 +163,21 @@ $(document).ready(function() {
                             action: function ( e, dt, node, config ) {
                                printCalendarOfEvents(this);
                             }
-                         }
+                         },
+                           {
+                            extend: "selectedSingle",
+                            text: "Exam Result Reports",
+                            action: function ( e, dt, node, config ) {
+                               examReults(this);
+                            }
+                          }/*,
+                           {
+                            extend: "selectedSingle",
+                            text: "Subject Mean Report",
+                            action: function ( e, dt, node, config ) {
+                               meanReults(this);
+                            }
+                          }*/
 		]
 	});
         
@@ -246,6 +260,18 @@ function printCalendarOfEvents(ed){
  
     //alert("Selecte Events = "+arrSpl[1]);
 
+}
+
+function meanReults(){
+
+ // $("#reportView").html('<object data="/back/Jasper/meantabular.php?zone='+zone+'" type="application/pdf" width="1090px" height="700px">alt : <a href="back/Reports.php?type='+zone+'" >Mean Marks Reports</a></object>');
+  //$('#reportView').popup('show');  
+
+}
+
+
+function examReults(ed){
+  $('#examreportView').popup('show'); 
 }
 
 

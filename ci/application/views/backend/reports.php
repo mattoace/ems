@@ -215,4 +215,4 @@
         </div>
     </div>
 </div>
- <div id="reportView" class="well" style="visibility:hidden;">
+ <div id="reportViewExam" class="well" style="visibility:hidden;">

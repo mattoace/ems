@@ -204,8 +204,47 @@ function reportDialogTabular(){
     var term = $('#selector6').val();
     var examyear = $('#selector7').val();
 
-    $("#reportView").html('<object data="/back/Jasper/indextabular.php?type='+examtype+'&institution='+institution+'&year='+year+'&classid='+classid+'&streamid='+streamid+'&examtype='+examtyp+'&term='+term+'&examyear='+examyear+'" type="application/pdf" width="1090px" height="700px">alt : <a href="back/Reports.php?type='+examtype+'&institution='+institution+'&year='+year+'&classid='+classid+'&streamid='+streamid+'&examtype='+examtyp+'&term='+term+'&examyear='+examyear+'" >Ems Reports</a></object>');
-    $('#reportView').popup('show');  
+    $("#reportViewExam").html('<object data="/back/Jasper/indextabular.php?type='+examtype+'&institution='+institution+'&year='+year+'&classid='+classid+'&streamid='+streamid+'&examtype='+examtyp+'&term='+term+'&examyear='+examyear+'" type="application/pdf" width="1090px" height="700px">alt : <a href="back/Reports.php?type='+examtype+'&institution='+institution+'&year='+year+'&classid='+classid+'&streamid='+streamid+'&examtype='+examtyp+'&term='+term+'&examyear='+examyear+'" >Ems Reports</a></object>');
+    $('#reportViewExam').popup('show');  
+}
+
+function topStudentListOpUp(){
+     $('#reportViewExamPopup').popup('show');     
+  }
+
+function topStudentList(){    
+    var examtype = $('#selector4').find("option:selected").text();
+    var institution = $('#selector1').val();
+    var year = $('#selector1').val();
+    var classid = $('#selector2').val();
+    var streamid = $('#selector3').val();
+    var examtyp = $('#selector4').val();
+    var term = $('#selector6').val();
+    var examyear = $('#selector7').val();
+    var toplist = $('#toplist').val();
+
+    $("#reportViewExam").html('<object data="/back/Jasper/indextabularTops.php?toplist='+toplist+'&type='+examtype+'&institution='+institution+'&year='+year+'&classid='+classid+'&streamid='+streamid+'&examtype='+examtyp+'&term='+term+'&examyear='+examyear+'" type="application/pdf" width="1090px" height="700px">alt : <a href="back/Reports.php?type='+examtype+'&institution='+institution+'&year='+year+'&classid='+classid+'&streamid='+streamid+'&examtype='+examtyp+'&term='+term+'&examyear='+examyear+'" >Ems Reports</a></object>');
+    $('#reportViewExam').popup('show');  
+   // $('#reportViewExamPopup').popup('hide'); 
+}
+
+
+function meanSummary(parameter){
+
+    var examtype = $('#selector4').find("option:selected").text();
+    var institution = $('#selector1').val();
+    var year = $('#selector1').val();
+    var classid = $('#selector2').val();
+    var streamid = $('#selector3').val();
+    var examtyp = $('#selector4').val();
+    var term = $('#selector6').val();
+    var examyear = $('#selector7').val();
+
+    $("#reportViewExam").html('<object data="/back/Jasper/meantabular.php?zone='+parameter+'&type='+examtype+'&institution='+institution+'&year='+year+'&classid='+classid+'&streamid='+streamid+'&examtype='+examtyp+'&term='+term+'&examyear='+examyear+'" type="application/pdf" width="1090px" height="700px">alt : <a href="back/Reports.php?type='+examtype+'&institution='+institution+'&year='+year+'&classid='+classid+'&streamid='+streamid+'&examtype='+examtyp+'&term='+term+'&examyear='+examyear+'" >Ems Reports</a></object>');
+    $('#reportViewExam').popup('show');  
+
+
+
 }
 
 
