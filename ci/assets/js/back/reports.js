@@ -212,6 +212,28 @@ function topStudentListOpUp(){
      $('#reportViewExamPopup').popup('show');     
   }
 
+
+function enterMarksRange(){
+  $('#reportEnterRange').popup('show');  
+} 
+
+function getMarksRange(){
+    var examtype = $('#selector4').find("option:selected").text();
+    var institution = $('#selector1').val();
+    var year = $('#selector1').val();
+    var classid = $('#selector2').val();
+    var streamid = $('#selector3').val();
+    var examtyp = $('#selector4').val();
+    var term = $('#selector6').val();
+    var examyear = $('#selector7').val();
+     var firstmark = $('#firstmark').val();
+     var lastmark = $('#lastmark').val();
+    $("#reportViewExam").html('<object data="/back/Jasper/markrangetabular.php?firstmark='+firstmark+'&lastmark='+lastmark+'&type='+examtype+'&institution='+institution+'&year='+year+'&classid='+classid+'&streamid='+streamid+'&examtype='+examtyp+'&term='+term+'&examyear='+examyear+'" type="application/pdf" width="1090px" height="700px">alt : <a href="back/Reports.php?type='+examtype+'&institution='+institution+'&year='+year+'&classid='+classid+'&streamid='+streamid+'&examtype='+examtyp+'&term='+term+'&examyear='+examyear+'" >Ems Reports</a></object>');
+    $('#reportViewExam').popup('show');  
+}
+
+
+
 function topStudentList(){    
     var examtype = $('#selector4').find("option:selected").text();
     var institution = $('#selector1').val();

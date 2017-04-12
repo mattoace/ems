@@ -374,3 +374,12 @@ div.column_half {
 	}
 }
 
+.nav.nav-tabs {
+    background-color: #8bc3 !important;
+}
+.grid_3.grid_5 > h3 {
+    background-color: #8bc34a !important;
+    color: white !important;
+    font-size: 16px !important;
+    margin-bottom: 4px !important;
+}

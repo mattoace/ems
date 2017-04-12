@@ -23,6 +23,19 @@ function loadInstitutions(institutionType,inst_name){
 
 }
 
+ function loadTeachers(selVal){
+
+     var teachersDropdown = $('#selector8');
+     teachersDropdown.empty(); 
+
+    $.get("/back/LoopUpDropDowns.php?case=6&id="+selVal,function(data){ 
+       for (var i = 0 ; i < data.data.length ; i++){ 
+            var o = new Option(data.data[i].ems_person.fname+" "+data.data[i].ems_person.mname+" "+data.data[i].ems_person.lname,data.data[i].ems_person.id );
+            teachersDropdown.append(o);
+       }
+      },"json");
+ }
+
 function chooseClasses(selVal){
     var classDropdown = $('#selector2');
      classDropdown.empty(); 
@@ -71,6 +84,7 @@ function chooseClasses(selVal){
 
 function selectChanged(obj,table1,editor1,table2,editor2){   
     chooseClasses(institutionDropdown.val());
+    loadTeachers(institutionDropdown.val());
     //chooseSubjects(institutionDropdown.val());
    
     

@@ -43,7 +43,8 @@ function loadInstitutions(institutionType,myTable1,myEditor1,inst_name){
          }         
        selectChanged(institutionType,myTable1,myEditor1,null,null);
        setCookie('institution_type',institutionType, 1); 
-       chooseSubjects(institutionType);       
+       chooseSubjects(institutionType);
+             
      },"json");
 
    $('#inst_name').html(inst_name+'<span class="caret"></span>');
@@ -65,6 +66,20 @@ function chooseClasses(selVal){
       },"json");
     
     }
+
+
+ function loadTeachers(selVal){
+
+     var teachersDropdown = $('#selector8');
+     teachersDropdown.empty(); 
+
+    $.get("/back/LoopUpDropDowns.php?case=6&id="+selVal,function(data){ 
+       for (var i = 0 ; i < data.data.length ; i++){ 
+            var o = new Option(data.data[i].ems_person.fname+" "+data.data[i].ems_person.mname+" "+data.data[i].ems_person.lname,data.data[i].ems_person.id );
+            teachersDropdown.append(o);
+       }
+      },"json");
+ }
     
  function chooseStream(selVal){
     var classDropdown = $('#selector2');
@@ -138,7 +153,7 @@ function chooseClasses(selVal){
 function selectChanged(obj,table1,editor1,table2,editor2){   
     chooseClasses(institutionDropdown.val());
     //chooseSubjects(institutionDropdown.val());
-
+    loadTeachers(institutionDropdown.val()); 
     loadUrlMarks = "/back/Marks.php?inst="+institutionDropdown.val()+"&class_id="+classDropdown.val()+"&stream_id="+streamDropdown.val()+"&exam_id="+examDropdown.val()+"&subject_id="+subjectDropdown.val()+"&term_id="+termDropdown.val();
     tablesMarks.ajax.url(loadUrlMarks).load(); 
 

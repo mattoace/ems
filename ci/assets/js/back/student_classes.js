@@ -3,8 +3,9 @@ instDropdown = $('#selector1');
 //loadUrlClass = "/back/Student_Classes.php?id="+classDropdown.val()+"&inst="+instDropdown.val();
  loadUrlClass = "/back/Student_ClassesMain.php?id="+classDropdown.val()+"&inst="+instDropdown.val();
 function selectClassChanged(tableClass){
+ 
   gettheclasses(tableClass,instDropdown.val(),classDropdown.val());
-  //chooseClasses();
+  
 }
 
 
@@ -177,6 +178,8 @@ $(document).ready(function() {
         // this will contain a reference to the checkbox   
         if (this.checked) { 
 
+          alert("55");
+
             var cells = table
                 .cells( ":checkbox" )
                 .nodes();
@@ -197,7 +200,7 @@ $(document).ready(function() {
     });
 
 
-
+ chooseClasses($('#selectorClass').val());
 
 },"json");  
 

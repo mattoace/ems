@@ -93,13 +93,13 @@
                                                            </select></div>
 
                                                    </div>
-                                                 <div class="row">
+                                               <!--   <div class="row">
                                                     <div class="form-groups">
                                                     <label for="selector1" class="col-sm-2 control-label" style="margin-left: 2%; margin-top: 0.5%;"><span style="font-size:0.9em;">Check All : &nbsp; </span>  <input type="checkbox" id="selectall" value="selectall"></label>
                                                         
 
                                                     </div>
-                                                  </div>
+                                                  </div> -->
 
                                                    <div class="grid_3 grid_5">						
                                                        <div class="but_list">

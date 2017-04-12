@@ -111,7 +111,7 @@
                                      <option>Select a Stream </option>
                                  </select>                     
                              </div>
-                         </div>
+                         </div>                         
                          
                         
 
@@ -119,6 +119,14 @@
                              <label for="selector5" class="col-sm-2 control-label" style="margin-left: 1.6%; margin-top: 0.9%; margin-right:3.2px;">Select Subject</label>
                              <select name="selector5" onchange="reloadtheAllstudentsGrid(); gettheclasses();" id="selector5" class="form-control1" style="height:26px;margin-top:0.4px;width: 24%;">
                                  <option>Select Subject</option>
+                             </select>                     
+                         </div>
+
+
+                        <div class="form-group">                     
+                             <label for="selector8" class="col-sm-2 control-label" style="margin-left: 1.6%; margin-top: 0.9%; margin-right:3.2px;">Teacher</label>
+                             <select name="selector8" onchange="" id="selector8" class="form-control1" style="height:26px;margin-top:0.4px;width: 24%;">
+                                 <option>Select Teacher</option>
                              </select>                     
                          </div>
                          

@@ -202,6 +202,8 @@ $(document).ready(function() {
 			selector: 'td:first-child'
 		},*/
 		buttons: [
+     'selectAll',
+        'selectNone'
 			/*{ extend: "create", editor: editor },
 			{ extend: "edit",   editor: editor },
 			{ extend: "remove", editor: editor },
@@ -212,7 +214,13 @@ $(document).ready(function() {
                                submitInstitutionDetails(this);
                             }
                         }*/
-		]
+		],
+      language: {
+        buttons: {
+            selectAll: "Select all items",
+            selectNone: "Select none"
+        }
+    }
 	} );
         
        table.select.style( 'multi' );

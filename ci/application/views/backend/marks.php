@@ -84,9 +84,9 @@
                           ?>
 
                          <div class="form-group">         
-                             <label for="selector1" class="col-sm-2 control-label" style="width:18.5%;padding-left: 2.4%; margin-top: 0.9%;">Select Institution</label>
+                             <label for="selector1" class="col-sm-2 control-label" style="width:18.5%;padding-left: 2.7%; margin-top: 0.9%;">Select Institution</label>
 
-                             <select onLoad="alert('test')" onchange="selectChanged(this,tablesMarks,editorMarks)" name="selector1" id="selector1" class="form-control1" style="height:26px;margin-top:0.4px;width: 60.4%;">
+                             <select onLoad="alert('test')" onchange="selectChanged(this,tablesMarks,editorMarks)" name="selector1" id="selector1" class="form-control1" style="height:26px;margin-top:0.4px;width: 60.3%;">
                                  <?php
                                  foreach ($query->result() as $row) {
                                      print('<option value = ' . $row->id . '>' . $row->institution_name . '</option>');
@@ -119,6 +119,15 @@
                                      <option>Select Exam Type</option>
                                  </select>                     
                              </div>
+
+
+                            <div class="form-group">                     
+                                 <label for="selector6" class="col-sm-2 control-label" style="margin-left: 0.9%; margin-top: 1.8%; width:35.5%;">Term / Semester</label>
+                                 <select name="selector6" onchange="subjectChanged()" id="selector6" class="form-control1" style="height:26px;margin-top:0.4px;width: 50%;">
+                                     <option>Select Term / Semester</option>
+                                 </select>                     
+                             </div> 
+
                          </div>
                          <div class="col-sm-6">
                              <div class="form-group">                     
@@ -127,14 +136,41 @@
                                      <option>Select Subject</option>
                                  </select>                     
                              </div>
+
+
+
+
+                             <div class="form-group">                     
+                                 <label for="selector8" class="col-sm-2 control-label" style="margin-left: -20%; margin-top: 1.8%; width:28%;">Teacher</label>
+                                 <select onchange="" name="selector8" id="selector8" class="form-control1" style="height:26px;margin-top:0.4px;width: 50%;">
+                                     <option>Select Teacher</option>
+                                 </select>                     
+                             </div>
+
                          </div>
 
-                         <div class="form-group">                     
+                        <!-- <div class="form-group">                     
                              <label for="selector6" class="col-sm-2 control-label" style="width:18.4%; padding-left: 2.4%; margin-top: 0.9%;">Term / Semester</label>
                              <select name="selector6" onchange="subjectChanged()" id="selector6" class="form-control1" style="height:26px;margin-top:0.4px;width: 24.1%;">
                                  <option>Select Term / Semester</option>
                              </select>                     
-                         </div>                       
+                         </div>  -->
+
+
+
+                         <div class="form-group">                     
+                             <label for="selector7" class="col-sm-2 control-label" style="width:18.4%; padding-left: 2.7%; margin-top: 0.9%;">Academic Year</label>
+                             <?php   
+                                $already_selected_value = 2016;
+                                $earliest_year = 2010;
+                                print '<select name="selector7" id="selector7" class="form-control1" style="height:26px;margin-top:0.4px;width: 23.9%;">';
+                                foreach (range(date('Y'), $earliest_year) as $x) {
+                                    print '<option value="'.$x.'"'.($x === $already_selected_value ? ' selected="selected"' : '').'>'.$x.'</option>';
+                                }
+                                print '</select>'; 
+                                ?>                  
+                         </div>  
+
                          
                      </div>
 

@@ -1,4 +1,5 @@
-<title>e-shule :: Statistics Zone</title>                     
+<title>e-shule :: Statistics Zone</title>    
+               
 <div class="grid_3 grid_5">
     <h3>Statistics : Zone</h3>
     <div class="but_list">
@@ -118,13 +119,9 @@
 
 </div>
 
- <div id="examreportView" class="well" style="visibility:hidden;">
+ <div id="examreportView" class="well" style="visibility:hidden;height: 450px !important;">
 
-
-
-
-
-                                                <style>
+ <style>
    .alert.alert-success {
     line-height: 0.7;
 }
@@ -270,24 +267,28 @@
            <div role="tabpanel" class="tab-pane fade in active" id="subjectgrades" aria-labelledby="home-tab">
                       <div class="alert alert-success" role="alert"> 
                         <div class="row">
-                          <div class="col-sm-1" style="margin-right:35px;">
+                          <div class="col-sm-1" style="margin-right:24px;">
                         <button type="button" onClick="reportDialog()" class="btn btn_5 btn-sm btn-default" >Generate Report</button>
                          </div>
-                         <div class="col-sm-1" style="padding-left:20px;margin-right:65px;">
+                         <div class="col-sm-1" style="padding-left:20px;margin-right:46px;">
                             <button type="button" onClick="reportDialogTabular()" class="btn btn_5 btn-sm btn-default" >Tabular View Report</button>
                          </div>
 
-                        <div class="col-sm-1" style="padding-left:20px;margin-right:65px;">
+                        <div class="col-sm-1" style="padding-left:20px;margin-right:33px;">
                             <button type="button" onClick="topStudentListOpUp()" class="btn btn_5 btn-sm btn-default" >Top Students List</button>
                         </div>
 
-                        <div class="col-sm-1">
+                        <div class="col-sm-1"  style="padding-left:20px;margin-right:73px;">
                             <button type="button" onClick="meanSummary(zone)" class="btn btn_5 btn-sm btn-default" >Mean Schools Summary</button>
+                        </div>
+
+                        <div class="col-sm-1">
+                            <button type="button" onClick="enterMarksRange(zone)" class="btn btn_5 btn-sm btn-default" >Set marks Range</button>
                         </div>
 
 
 
-                       <div class="col-sm-9">
+                       <div class="col-sm-8">
                         </div>
                        </div>
                       </div> 
@@ -297,7 +298,7 @@
 
                     <style>
                     .dialogModal .dialogModal_content {
-                        height: 80vh;
+                        height: 20vh;
                         padding: 15px 5px;  
                     }
 
@@ -353,12 +354,15 @@
 </div>
 <div id="reportViewExam" class="well" style="visibility:hidden;">
 </div>
-
-
-
+<Style>
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {  
+    
+    margin-top:10px !important;
+  }
+</style>
 
 <div id="reportViewExamPopup" class="well" style="visibility:hidden; background-color: #8bc34a;color: white;">
-<label for="focusedinput" class="col-sm-12 control-label" style="background-color: #3C7641;margin-bottom: 6px; margin-top: 6px !important;"><h6><b>Enter limit e.g Top 10 , Top 20 etc</b></h6></label>
+<label for="focusedinput" class="col-sm-12 control-label" style="background-color: #3C7641;margin-bottom: 6px; margin-top: 6px !important;"><h6 style="margin-top:9px !important"><b>Enter limit e.g Top 10 , Top 20 etc</b></h6></label>
     <div class="form-group">
         <label for="focusedinput" class="col-sm-12 control-label">Top</label>
         <div class="col-sm-12">
@@ -367,6 +371,22 @@
         <div class="clearfix"></div><br><hr>
         <button type="button" onClick="topStudentList()" class="btn btn_5 btn-sm btn-default" >Get List</button>
     </div> 
+</div>
 
+<div id="reportEnterRange" class="well" style="visibility:hidden; background-color: #8bc34a;color: white;">
+<label for="focusedinput" class="col-sm-12 control-label" style="background-color: #3C7641;margin-bottom: 6px; margin-top: 6px !important;"><h6 style="margin-top:9px !important"><b>Enter Marks Range</b></h6></label>
+    <div class="form-group">
+        <label for="focusedinput" class="col-sm-12 control-label">Start Mark</label>
+        <div class="col-sm-12">
+            <input type="text" class="form-control1" style="height:25px" id="firstmark" placeholder="" >
+        </div>
 
+        <label for="focusedinput" class="col-sm-12 control-label">End Mark</label>
+        <div class="col-sm-12">
+            <input type="text" class="form-control1" style="height:25px" id="lastmark" placeholder="" >
+        </div>
+
+        <div class="clearfix"></div><br><hr>
+        <button type="button" onClick="getMarksRange()" class="btn btn_5 btn-sm btn-default" >Get List</button>
+    </div> 
 </div>

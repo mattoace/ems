@@ -47,7 +47,7 @@
 
 			<!--logo and iconic logo start-->
 			<div class="logo">
-				<h1><a href="<?php echo base_url("index.php/admin?id=".$_GET['id']);?>">EMS <span>Modules</span></a></h1>
+				<h1><a href="<?php echo base_url("index.php/admin?id=".$_GET['id']);?>">e-shule<span>admin</span></a></h1>
 			</div>
 			<div class="logo-icon text-center">
 				<a href="<?php echo base_url("index.php?id=".$_GET['id']);?>"><i class="lnr lnr-home"></i> </a>
